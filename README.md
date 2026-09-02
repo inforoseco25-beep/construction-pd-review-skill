@@ -29,44 +29,6 @@ New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills" | Ou
 git clone https://github.com/inforoseco25-beep/construction-pd-review-skill.git "$env:USERPROFILE\.agents\skills\construction-pd-review-skill"
 ```
 
-## Обновление установленного skill
-
-Если skill был установлен командой `git clone` и вы не редактировали его локально:
-
-```bash
-Set-Location "$env:USERPROFILE\.agents\skills\construction-pd-review-skill"
-git status
-git pull --ff-only
-```
-
-Если `git status` показывает изменённые файлы, сначала сохраните эти изменения отдельным коммитом или сделайте резервную копию. Не выполняйте принудительный сброс, если не понимаете, какие данные будут потеряны.
-
-## Внесение изменений
-
-Рекомендуемый рабочий процесс:
-
-1. Получить последние изменения: `git pull --ff-only`.
-2. Создать отдельную ветку: `git switch -c change/краткое-описание`.
-3. Изменить нужные файлы (`SKILL.md`, файлы в `references/`, `rules/`, `router/`).
-4. Проверить изменения: `git status` и `git diff`.
-5. Проверить структуру skill и прогнать тестовые сценарии (если есть).
-6. Создать коммит и отправить ветку на GitHub:
-
-```bash
-git add .
-git commit -m "Кратко опишите изменение"
-git push -u origin HEAD
-```
-
-7. После отправки откройте Pull Request на GitHub, проверьте список изменённых файлов во вкладке **Files changed** и только затем объедините изменения с основной веткой `main`.
-
-## Контрибьюторы
-
-Список формируется автоматически по истории коммитов (**Insights → Contributors**). Чтобы добавить участника:
-
-- дайте ему доступ на запись через **Settings → Collaborators and teams → Add people** (роль `Write`);
-- либо примите его Pull Request через обычный процесс код-ревью.
-
 ## Безопасность
 
 - Не добавляйте в репозиторий папки `input`, `output`, реальные тома проектной документации, чертежи и документы конкретных объектов/заказчиков.
