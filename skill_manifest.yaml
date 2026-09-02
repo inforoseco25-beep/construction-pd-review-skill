@@ -1,0 +1,22 @@
+name: construction-pd-review
+version: 3.0.0
+main_branch: main
+
+profiles:
+  - SPOSU
+  - AR
+  - KR
+  - TH
+  - VK
+  - NVK
+  - OVIK
+  - EOM
+  - FIRE
+  - SECURITY
+  - MPB
+  - POS
+  - OOS
+
+validation:
+  require_skill_md: true
+  require_changelog: true
